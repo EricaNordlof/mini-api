@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: miniapi-postgres
+    environment:
+      POSTGRES_DB: miniapi
+      POSTGRES_USER: miniuser
+      POSTGRES_PASSWORD: minipassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - miniapi_pgdata:/var/lib/postgresql/data
+
+volumes:
+  miniapi_pgdata:
